@@ -1,7 +1,6 @@
 /**
- * CONTROLLER: Is the class responsible for control of periods
- * 
- * @author FELIPE
+ * CONTROLLER: Is the class responsible for control of system
+ * HIGH COESSION: Contains listings of period and list of courses offered
  */
 
 package sistema;
@@ -11,6 +10,9 @@ import java.util.List;
 
 import BD.LeitorArquivo;
 
+/**
+ * @author FELIPE
+ */
 public class Plano {
 
 	List<Periodo> listPeriodos;
@@ -167,12 +169,6 @@ public class Plano {
 	 * Private methods
 	 */
 	
-	/**
-	 * Private method to load the disciplines of the first period
-	 * 
-	 * @return List<Discipline> with disciplines for the first period
-	 * @throws Exception if the total of credits is greater than the maximum value
-	 */
 	private void loadFirstPeriod() throws Exception{
 		String[] disciplinas = new String[]{"Calculo 1", "IC", "Lab Prog 1", 
 				"Prog 1", "Vetorial"};

@@ -1,7 +1,5 @@
 /**
  * INFORMATION EXPERT: Is the class responsible for storing information such as the name of discipline and total credits
- * 
- * @author FELIPE
  */
 
 package sistema;
@@ -9,6 +7,9 @@ package sistema;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author FELIPE
+ */
 public class Disciplina {
 
 	String name;
@@ -50,11 +51,7 @@ public class Disciplina {
 		this.dificult = dificult;
 		this.prerequisitos = prerequisitos;
 	}
-	
-	public void setPrerequisitos(String[] prerequisitos){
-		this.prerequisitos = prerequisitos;
-	}
-	
+
 	/**
 	 * get ID of discipline
 	 * 
@@ -98,11 +95,19 @@ public class Disciplina {
 		return this.credits;
 	}
 
+	/**
+	 * get prerequisites
+	 * @return list of prerequisites
+	 */
 	public String[] getPrerequisites() {
 		// TODO Auto-generated method stub
 		return this.prerequisitos;
 	}
 
+	/**
+	 * get difficulty
+	 * @return
+	 */
 	public int getDifficulty() {
 		return dificult;
 	}

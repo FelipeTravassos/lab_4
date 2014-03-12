@@ -1,7 +1,7 @@
 /**
- *  
- * @author FELIPE
+ *  INFORMATION EXPERT: the class is responsible for storing disciplines of period
  */
+
 package sistema;
 
 import java.util.ArrayList;
@@ -9,6 +9,9 @@ import java.util.List;
 
 import BD.LeitorArquivo;
 
+/**
+ * @author FELIPE
+ */
 public class Periodo {
 	
 	private List<Disciplina> disciplinas; 
