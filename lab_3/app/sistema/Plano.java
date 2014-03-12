@@ -142,7 +142,7 @@ public class Plano {
 	 * @return
 	 */
 	public int getDegreeOfDifficulty(int period) {
-		if(listPeriodos.size() >= period && period > 1){
+		if(listPeriodos.size() >= period && period > 0){
 			return listPeriodos.get(period-1).getDegreeOfDifficulty();
 		}
 		return 0;

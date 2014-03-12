@@ -31,27 +31,30 @@
 	<div class="wrapper" style="height: 100%;">
 		<div class="titulo">
 			<nome-principal>Meu Curso</nome-principal>
-		</div>
-		<br/>	
+		</div>	
 		<div id="colunas">
 			<div id="c1" class="coluna">
-				<nome>@plano.getTotalCredits(1) creditos</nome>
+				<nome>@plano.getTotalCredits(1) credito(s)</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(1)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(1)){
 					<div class="disciplina">
 						<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-						<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+						<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+						<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</div>
 				}
 			</div>
 		
 			<div id="c2" class="coluna">
 				<nome>@plano.getTotalCredits(2) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(2)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(2)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 2)>remover</a>
 				</div>
@@ -60,11 +63,13 @@
 			
 			<div id="c3" class="coluna">
 				<nome>@plano.getTotalCredits(3) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(3)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(3)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 3)>remover</a>
 				</div>
@@ -73,11 +78,13 @@
 			
 			<div id="c4" class="coluna">
 				<nome>@plano.getTotalCredits(4) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(4)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(4)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 4)>remover</a>
 				</div>
@@ -86,11 +93,13 @@
 			
 			<div id="c5" class="coluna">
 				<nome>@plano.getTotalCredits(5) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(5)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(5)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 5)>remover</a>
 				</div>
@@ -99,11 +108,13 @@
 			
 			<div id="c6" class="coluna">
 				<nome>@plano.getTotalCredits(6) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(6)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(6)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 6)>remover</a>
 				</div>
@@ -112,11 +123,13 @@
 			
 			<div id="c7" class="coluna">
 				<nome>@plano.getTotalCredits(7) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(7)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(7)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 7)>remover</a>
 				</div>
@@ -125,11 +138,13 @@
 			
 			<div id="c8" class="coluna">
 				<nome>@plano.getTotalCredits(8) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(8)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(8)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 8)>remover</a>
 				</div>
@@ -138,11 +153,13 @@
 			
 			<div id="c9" class="coluna">
 				<nome>@plano.getTotalCredits(9) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(9)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(9)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 9)>remover</a>
 				</div>
@@ -151,11 +168,13 @@
 			
 			<div id="c10" class="coluna">
 				<nome>@plano.getTotalCredits(10) creditos</nome>
+				<nome>dificuldade: @plano.getDegreeOfDifficulty(10)</nome>
 				</br>
 				@for(disciplina <- plano.getAllocatedDisciplines(10)){
 				<div class="disciplina">
 					<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
-					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>
+					<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao></br>
+					<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>		
 					</br>
 					<a href=@auxiliar.concatenaCaminho("/remove/",disciplina, 10)>remover</a>
 				</div>
@@ -172,6 +191,8 @@
 						<div class="disciplina float-left" >
 							<nome>@plano.getNameDiscipline(disciplina)</nome><br/>
 							<descricao>@plano.getCreditsDiscipline(disciplina) creditos</descricao>		
+							</br>
+							<descricao>Dificuldade: @plano.getDegreeOfDifficultyOfTheDiscipline(disciplina)</descricao>									
 							</br>
 							<a href=@auxiliar.concatenaCaminho("/meuPlano/",disciplina,2)>2</a>
 							<a href=@auxiliar.concatenaCaminho("/meuPlano/",disciplina,3)>3</a>
