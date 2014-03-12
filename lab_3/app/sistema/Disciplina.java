@@ -14,6 +14,7 @@ public class Disciplina {
 	String name;
 	int credits;
 	String ID;
+	int dificult;
 	String[] prerequisitos = new String[]{};
 	
 	/**
@@ -28,14 +29,11 @@ public class Disciplina {
 	 * @param name: name of discipline
 	 * @param credits: credits of discipline
 	 */
-	public Disciplina(String name, int credits) {
+	public Disciplina(String name, int credits, int dificult) {
 		setName(name);
 		setCredits(credits);
 		this.ID = name;
-	}
-	
-	public void setPrerequisitos(String[] prerequisitos){
-		this.prerequisitos = prerequisitos;
+		this.dificult = dificult;
 	}
 	
 	/**
@@ -45,10 +43,15 @@ public class Disciplina {
 	 * @param credits: credits of discipline
 	 * @param prerequisitos: Prerequisites
 	 */
-	public Disciplina(String name, int credits, String[] prerequisitos) {
+	public Disciplina(String name, int credits, int dificult, String[] prerequisitos) {
 		setName(name);
 		setCredits(credits);
 		this.ID = name;
+		this.dificult = dificult;
+		this.prerequisitos = prerequisitos;
+	}
+	
+	public void setPrerequisitos(String[] prerequisitos){
 		this.prerequisitos = prerequisitos;
 	}
 	
@@ -98,6 +101,10 @@ public class Disciplina {
 	public String[] getPrerequisites() {
 		// TODO Auto-generated method stub
 		return this.prerequisitos;
+	}
+
+	public int getDifficulty() {
+		return dificult;
 	}
 
 }

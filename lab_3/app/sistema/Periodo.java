@@ -136,4 +136,17 @@ public class Periodo {
 		
 		return retorno;
 	}
+
+	/**
+	 * get degree of difficulty for specific period
+	 * @param period
+	 * @return
+	 */
+	public int getDegreeOfDifficulty() {
+		int retorno = 0;
+		for (Disciplina disciplina : disciplinas) {
+			retorno += disciplina.getDifficulty();
+		}
+		return retorno;
+	}
 }

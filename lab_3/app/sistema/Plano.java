@@ -135,6 +135,33 @@ public class Plano {
 		}
 		return total;
 	}
+
+	/**
+	 * get degree of difficulty for specific period
+	 * @param period
+	 * @return
+	 */
+	public int getDegreeOfDifficulty(int period) {
+		if(listPeriodos.size() >= period && period > 1){
+			return listPeriodos.get(period-1).getDegreeOfDifficulty();
+		}
+		return 0;
+	}
+
+	/**
+	 * get degree of difficulty of the discipline
+	 * @param ID
+	 * @return
+	 */
+	public int getDegreeOfDifficultyOfTheDiscipline(String ID) {
+		int difficulty = 0;
+		for (Disciplina disciplina : listDisciplinasDisponiveis) {
+			if(disciplina.getID().equals(ID)){
+				difficulty = disciplina.getDifficulty();
+			}
+		}
+		return difficulty;
+	}
 	
 	/*
 	 * Private methods
@@ -159,15 +186,18 @@ public class Plano {
 		List<String[]> disciplinas = leitorArq.read("disciplinas.txt");
 		int NOME_DISCIPLINA = 0;
 		int TOTAL_CREDITOS = 1;
-		int PREREQUISITOS = 2;
+		int GRAU_DIFICULDADE = 2;
+		int PREREQUISITOS = 3;
 		
 		for (String[] disciplina : disciplinas) {
-			if(disciplina.length ==3){
+			if(disciplina.length ==4){
 				this.listDisciplinasDisponiveis.add
-				(new Disciplina(disciplina[NOME_DISCIPLINA], Integer.parseInt(disciplina[TOTAL_CREDITOS]), disciplina[PREREQUISITOS].split("#")));				
+				(new Disciplina(disciplina[NOME_DISCIPLINA], Integer.parseInt(disciplina[TOTAL_CREDITOS]),
+						Integer.parseInt(disciplina[GRAU_DIFICULDADE]) ,disciplina[PREREQUISITOS].split("#")));				
 			}else{
 				this.listDisciplinasDisponiveis.add
-				(new Disciplina(disciplina[NOME_DISCIPLINA], Integer.parseInt(disciplina[TOTAL_CREDITOS])));
+				(new Disciplina(disciplina[NOME_DISCIPLINA], Integer.parseInt(disciplina[TOTAL_CREDITOS]), 
+						Integer.parseInt(disciplina[GRAU_DIFICULDADE])));
 			}
 		}
 	}
@@ -203,5 +233,4 @@ public class Plano {
 			removeDisciplineWithThisPrerequisites(ID, ++period);
 		}
 	}
-
 }

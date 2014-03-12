@@ -28,7 +28,6 @@ public class MyTests {
 		try {
 			sistema = new Plano();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
 	}
@@ -55,19 +54,19 @@ public class MyTests {
 		List<Disciplina> oraculo = new ArrayList<Disciplina>();
 		try {
 			sistema.addDisciplineInPeriod("Calculo 2", 2);
-			oraculo.add(new Disciplina("Calculo 2", 4, new String[]{"Calculo 1"}));
+			oraculo.add(new Disciplina("Calculo 2", 4, 4, new String[]{"Calculo 1"}));
 			sistema.addDisciplineInPeriod("Discreta", 2);
-			oraculo.add(new Disciplina("Discreta", 4));
+			oraculo.add(new Disciplina("Discreta", 4, 1));
 			sistema.addDisciplineInPeriod("Metodologia", 2);
-			oraculo.add(new Disciplina("Metodologia", 4));
+			oraculo.add(new Disciplina("Metodologia", 4, 1));
 			sistema.addDisciplineInPeriod("Prog 2", 2);
-			oraculo.add(new Disciplina("Prog 2", 4, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
+			oraculo.add(new Disciplina("Prog 2", 4, 2, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
 			sistema.addDisciplineInPeriod("Lab Prog 2", 2);
-			oraculo.add(new Disciplina("Lab Prog 2", 4, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
+			oraculo.add(new Disciplina("Lab Prog 2", 4, 2, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
 			sistema.addDisciplineInPeriod("Grafos", 2);
-			oraculo.add(new Disciplina("Grafos", 2, new String[]{"Prog 1", "Lab Prog 1"}));
+			oraculo.add(new Disciplina("Grafos", 2, 2, new String[]{"Prog 1", "Lab Prog 1"}));
 			sistema.addDisciplineInPeriod("Fisica classica", 2);
-			oraculo.add(new Disciplina("Fisica classica", 4, new String[]{"Calculo 1", "Vetorial"}));
+			oraculo.add(new Disciplina("Fisica classica", 4, 2, new String[]{"Calculo 1", "Vetorial"}));
 			//Disciplina abaixo não sera adicionada por falta de cumprimento dos seus prerequisitos 
 			sistema.addDisciplineInPeriod("LEDA", 2);
 		} catch (Exception e) {		}
@@ -105,23 +104,23 @@ public class MyTests {
 		
 		try {
 			sistema.addDisciplineInPeriod("Calculo 2", 2);
-			segundo.add(new Disciplina("Calculo 2", 4, new String[]{"Calculo 1"}));
+			segundo.add(new Disciplina("Calculo 2", 4, 4, new String[]{"Calculo 1"}));
 			sistema.addDisciplineInPeriod("Discreta", 3);
-			terceiro.add(new Disciplina("Discreta", 4));
+			terceiro.add(new Disciplina("Discreta", 4, 1));
 			sistema.addDisciplineInPeriod("Metodologia", 4);
-			quarto.add(new Disciplina("Metodologia", 4));
+			quarto.add(new Disciplina("Metodologia", 4, 1));
 			sistema.addDisciplineInPeriod("Prog 2", 5);
-			quinto.add(new Disciplina("Prog 2", 4, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
+			quinto.add(new Disciplina("Prog 2", 4, 2, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
 			sistema.addDisciplineInPeriod("Lab Prog 2", 6);
-			sexto.add(new Disciplina("Lab Prog 2", 4, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
+			sexto.add(new Disciplina("Lab Prog 2", 4, 2, new String[]{"Prog 1", "Lab Prog 1", "IC"}));
 			sistema.addDisciplineInPeriod("Grafos", 7);
-			setimo.add(new Disciplina("Grafos", 2, new String[]{"Prog 1", "Lab Prog 1"}));
+			setimo.add(new Disciplina("Grafos", 2, 2, new String[]{"Prog 1", "Lab Prog 1"}));
 			sistema.addDisciplineInPeriod("Fisica classica", 8);
-			oitavo.add(new Disciplina("Fisica classica", 4, new String[]{"Calculo 1", "Vetorial"}));
+			oitavo.add(new Disciplina("Fisica classica", 4, 2, new String[]{"Calculo 1", "Vetorial"}));
 			sistema.addDisciplineInPeriod("LEDA", 9);
-			nono.add(new Disciplina("LEDA", 4, new String[]{"Grafos", "Prog 2", "Lab Prog 2"}));
+			nono.add(new Disciplina("LEDA", 4, 2, new String[]{"Grafos", "Prog 2", "Lab Prog 2"}));
 			sistema.addDisciplineInPeriod("EDA", 10);
-			decimo.add(new Disciplina("EDA", 4, new String[]{"Grafos", "Prog 2", "Lab Prog 2"}));
+			decimo.add(new Disciplina("EDA", 4, 2, new String[]{"Grafos", "Prog 2", "Lab Prog 2"}));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -208,7 +207,7 @@ public class MyTests {
 
 		try {
 			sistema.addDisciplineInPeriod("Calculo 2", 2);
-			segundo.add(new Disciplina("Calculo 2", 4, new String[]{"Calculo 1"}));
+			segundo.add(new Disciplina("Calculo 2", 4, 3, new String[]{"Calculo 1"}));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -253,6 +252,29 @@ public class MyTests {
         assertThat(0).isEqualTo(sistema.getTotalCredits(5));
 	}
 
+	@Test
+	public void testUS5(){
+        assertThat(0).isEqualTo(sistema.getDegreeOfDifficulty(2));
+	
+		try {
+			sistema.addDisciplineInPeriod("Calculo 2", 2);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+        assertThat(3).isEqualTo(sistema.getDegreeOfDifficulty(2));
+		
+        try {
+			sistema.addDisciplineInPeriod("Discreta", 2);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+        
+        assertThat(4).isEqualTo(sistema.getDegreeOfDifficulty(2));
+        
+        assertThat(3).isEqualTo(sistema.getDegreeOfDifficultyOfTheDiscipline("Calculo 2"));
+	}
+	
 	/*
 	 * Private methods
 	 */
@@ -260,11 +282,11 @@ public class MyTests {
 	private List<Disciplina> getDisciplinesOfFirstPeriodo(){
 		List<Disciplina> retorno = new ArrayList<Disciplina>();
 		
-		retorno.add(new Disciplina("Calculo 1", 4, new String[]{}));
-		retorno.add(new Disciplina("IC", 4, new String[]{}));
-		retorno.add(new Disciplina("Lab Prog 1", 4, new String[]{}));
-		retorno.add(new Disciplina("Prog 1", 4, new String[]{}));
-		retorno.add(new Disciplina("Vetorial", 4, new String[]{}));
+		retorno.add(new Disciplina("Calculo 1", 4, 3, new String[]{}));
+		retorno.add(new Disciplina("IC", 4, 1, new String[]{}));
+		retorno.add(new Disciplina("Lab Prog 1", 4, 2, new String[]{}));
+		retorno.add(new Disciplina("Prog 1", 4, 2, new String[]{}));
+		retorno.add(new Disciplina("Vetorial", 4, 2, new String[]{}));
 
 		return retorno;
 	}
